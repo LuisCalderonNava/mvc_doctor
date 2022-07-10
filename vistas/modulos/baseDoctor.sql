@@ -33,3 +33,11 @@ CREATE TABLE especialidad
     cod_especialidad INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nombre_especialidad VARCHAR(50) NOT NULL
 )
+CREATE TABLE medico
+(
+    cod_medico INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    fk_especialidad INT NOT NULL,
+    fk_persona INT NOT NULL,
+    FOREIGN KEY (fk_especialidad) REFERENCES especialidad(cod_especialidad),
+    FOREIGN KEY (fk_persona) REFERENCES persona (codigo_persona)
+)
