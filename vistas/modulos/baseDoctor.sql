@@ -6,3 +6,8 @@ CREATE TABLE persona
     apellido2 VARCHAR(20) NOT NULL,
     telefono VARCHAR(20) NOT NULL
 )
+CREATE TABLE provincia
+(
+    cod_provincia INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nombre_provincia VARCHAR(30) NOT NULL
+)
