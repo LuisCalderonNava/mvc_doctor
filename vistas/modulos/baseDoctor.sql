@@ -46,3 +46,15 @@ CREATE TABLE habitacion
     cod_habitacion INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     num_camas INT NOT NULL
 )
+CREATE TABLE ingreso
+(
+    cod_ingreso INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    fecha_ingreso DATE NOT NULL,
+    num_cama INT NOT NULL,
+    fk_paciente INT NOT NULL,
+    fk_medico INT NOT NULL,
+    fk_habitacion INT NOT NULL,
+    FOREIGN KEY (fk_paciente) REFERENCES paciente(paciente),
+    FOREIGN KEY (fk_medico) REFERENCES medico (cod_medico),
+    FOREIGN KEY (fk_habitacion) REFERENCES habitacion(cod_habitacion)
+)
