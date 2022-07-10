@@ -28,3 +28,8 @@ CREATE TABLE paciente
     FOREIGN KEY (fk_persona) REFERENCES persona (codigo_persona),
     FOREIGN KEY (fk_poblacion) REFERENCES poblacion (cod_poblacion)
 )
+CREATE TABLE especialidad 
+(
+    cod_especialidad INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nombre_especialidad VARCHAR(50) NOT NULL
+)
