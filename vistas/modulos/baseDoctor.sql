@@ -18,3 +18,13 @@ CREATE TABLE poblacion
     fk_provincia INT NOT NULL,
     FOREIGN KEY (fk_provincia) REFERENCES provincia (cod_provincia)
 )
+CREATE TABLE paciente 
+(
+    cod_paciente INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    direccion VARCHAR(50) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    fk_persona INT NOT NULL,
+    fk_poblacion INT NOT NULL,
+    FOREIGN KEY (fk_persona) REFERENCES persona (codigo_persona),
+    FOREIGN KEY (fk_poblacion) REFERENCES poblacion (cod_poblacion)
+)
