@@ -41,3 +41,8 @@ CREATE TABLE medico
     FOREIGN KEY (fk_especialidad) REFERENCES especialidad(cod_especialidad),
     FOREIGN KEY (fk_persona) REFERENCES persona (codigo_persona)
 )
+CREATE TABLE habitacion 
+(
+    cod_habitacion INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    num_camas INT NOT NULL
+)
