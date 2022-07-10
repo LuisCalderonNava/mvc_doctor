@@ -11,3 +11,10 @@ CREATE TABLE provincia
     cod_provincia INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nombre_provincia VARCHAR(30) NOT NULL
 )
+CREATE TABLE poblacion 
+(
+    cod_poblacion INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    cp INT NOT NULL,
+    fk_provincia INT NOT NULL,
+    FOREIGN KEY (fk_provincia) REFERENCES provincia (cod_provincia)
+)
