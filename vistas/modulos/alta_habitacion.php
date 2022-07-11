@@ -18,5 +18,5 @@
 </form>
 <?php
 	$registro = new Controlador();
-	$registro -> registroEspecialidadControlador();
+	$registro -> registroHabitacionControlador();
 ?>
