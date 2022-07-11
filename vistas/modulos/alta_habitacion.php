@@ -8,8 +8,8 @@
 <form method="POST" enctype="multipart/form-data" autocomplete="off">
 	<!--Nombre de la Habitacion-->
 	<div class="mb-3">
-  	<label for="habitacion" class="form-label">Numero de camas: </label>
-  	<input type="text" class="form-control" id="habitacion" placeholder="" name="habitacion" pattern="[0-9]"required>
+  	<label for="num_camas" class="form-label">Numero de camas: </label>
+  	<input type="text" class="form-control" id="num_camas" placeholder="" name="num_camas" pattern="[0-9]"required>
 	</div>
 	<!--Boton-->
 	<div class="d-grid gap-2 col-6 mx-auto">
