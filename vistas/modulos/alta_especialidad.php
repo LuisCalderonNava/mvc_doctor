@@ -9,7 +9,7 @@
 	<!--Nombre de la categoria-->
 	<div class="mb-3">
   	<label for="nombre_especialidad" class="form-label">Nombre de la Especialidad</label>
-  	<input type="text" class="form-control" id="nombre_especialidad" placeholder="Terror, Diversion, Etc." name="nombre_especialidad" required>
+  	<input type="text" class="form-control" id="nombre_especialidad" placeholder="Cardiologo" name="nombre_especialidad" required>
 	</div>
 	<!--Boton-->
 	<div class="d-grid gap-2 col-6 mx-auto">
