@@ -22,7 +22,7 @@
 	<select class="form-select" aria-label="Default select example" name="nom_persona" id="nom_persona" required>
 	  <option value="">Seleccione...</option>
 	  <?php 
-	  	$consulta = Controlador::consultaTipoPersonasControlador();
+	  	$consulta = Controlador::consultaPersonaPacienteControlador();
 	  	foreach($consulta as $datos => $valores)
 	  	{
 	  		echo '<option value="'.$valores["codigo_persona"].'">'.$valores["nombre"].'</option>';
@@ -36,10 +36,10 @@
 	<select class="form-select" aria-label="Default select example" name="poblacion" id="poblacion" required>
 	  <option value="">Seleccione...</option>
 	  <?php 
-	  	$consulta = Controlador::consultaTipoPersonasControlador();
+	  	$consulta = Controlador::consultaPoblacionControlador();
 	  	foreach($consulta as $datos => $valores)
 	  	{
-	  		echo '<option value="'.$valores["codigo_persona"].'">'.$valores["nombre"].'</option>';
+	  		echo '<option value="'.$valores["cod_poblacion"].'">'.$valores["cp"].'</option>';
 	  	}
 	  ?>
 	</select>
