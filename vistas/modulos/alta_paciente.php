@@ -30,7 +30,7 @@
 	  ?>
 	</select>
 	</div>
-    <!-- telefono -->
+    <!-- tPoblacion -->
     <div class="mb-3">
 	<label for="poblacion" class="form-label">Poblacion</label>
 	<select class="form-select" aria-label="Default select example" name="poblacion" id="poblacion" required>
