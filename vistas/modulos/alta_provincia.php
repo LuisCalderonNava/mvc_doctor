@@ -38,6 +38,7 @@
             return false;
         }
     }
+  </script>
 </form>
 <?php
 	$registro = new Controlador();
