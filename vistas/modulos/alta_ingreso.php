@@ -14,13 +14,13 @@
     <!-- Numero de cama -->
     <div class="mb-3">
   	<label for="numero_cama" class="form-label">Numero de cama: </label>
-  	<input type="text" class="form-control" id="numero_cama"  name="numero_cama" required>
+  	<input type="number" class="form-control" id="numero_cama"  name="numero_cama" required>
 	</div>
 
     <!-- Persona-->
     <div class="mb-3">
 	<label for="nom_paciente" class="form-label">Nombre paciente</label>
-	<select class="form-select" aria-label="Default select example" name="nom_paciente" id="nom_paciente" required>
+	<select class="form-select" aria-label="Default select example" name="nom_paciente" id="nom_paciente" required onkeypress="return soloLetras(event)">
 	  <option value="">Seleccione...</option>
 	  <?php 
 	  	$consulta = Controlador::consultaPacienteControlador();
@@ -34,7 +34,7 @@
     <!-- Medico -->
     <div class="mb-3">
 	<label for="nom_medico" class="form-label">Medico: </label>
-	<select class="form-select" aria-label="Default select example" name="nom_medico" id="nom_medico" required>
+	<select class="form-select" aria-label="Default select example" name="nom_medico" id="nom_medico" required onkeypress="return soloLetras(event)">
 	  <option value="">Seleccione...</option>
 	  <?php 
 	  	$consulta = Controlador::consultaMedicoControlador();
@@ -63,6 +63,31 @@
 	<div class="d-grid gap-2 col-6 mx-auto">
   		<button type="submit" class="btn btn-secondary">Guardar</button>
 	</div>
+	<script type="text/javascript">
+    function soloLetras(e)
+    {
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales)
+       {
+            if(key == especiales[i])
+            {
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        {
+            return false;
+        }
+    }
+	</script>
+	
 </form>
 <?php
 	$registro = new Controlador();

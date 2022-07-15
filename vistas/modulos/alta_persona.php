@@ -9,26 +9,50 @@
 	<!--Nombre de la categoria-->
 	<div class="mb-3">
   	<label for="nom_persona" class="form-label">Nombre: </label>
-  	<input type="text" class="form-control" id="nom_persona" placeholder="Luis Paulo" name="nom_persona" pattern="[A-Za-z]{20}"required>
+  	<input type="text" class="form-control" id="nom_persona" placeholder="Luis Paulo" name="nom_persona" required onkeypress="return soloLetras(event)" maxlength="20">
 	</div>
     <!-- apellido numero 1 -->
     <div class="mb-3">
   	<label for="apellido1" class="form-label">Apellido 1: </label>
-  	<input type="text" class="form-control" id="apellido1" placeholder="Calderon" name="apellido1" pattern="[A-Za-z]{20}"required>
+  	<input type="text" class="form-control" id="apellido1" placeholder="Calderon" name="apellido1" required onkeypress="return soloLetras(event)" maxlength="20">
 	</div>
     <!-- apellido numero 2-->
     <div class="mb-3">
   	<label for="apellido2" class="form-label">Apellido 2: </label>
-  	<input type="text" class="form-control" id="apellido2" placeholder="Calderon" name="apellido2" pattern="[A-Za-z]{20}"required>
+  	<input type="text" class="form-control" id="apellido2" placeholder="Calderon" name="apellido2" required onkeypress="return soloLetras(event)" maxlength="20">
     <!-- telefono -->
     <div class="mb-3">
   	<label for="telefono" class="form-label">Apellido 1: </label>
-  	<input type="text" class="form-control" id="telefono" placeholder="323-129-0260" name="telefono" pattern="[0-9]{20}"required>
+  	<input type="text" class="form-control" id="telefono" placeholder="323-129-0260" name="telefono" required onkeypress="return soloLetras(event)" maxlength="20">
 
 	<!--Boton-->
 	<div class="d-grid gap-2 col-6 mx-auto">
   		<button type="submit" class="btn btn-secondary">Guardar</button>
 	</div>
+	<script type="text/javascript">
+    function soloLetras(e)
+    {
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales)
+       {
+            if(key == especiales[i])
+            {
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        {
+            return false;
+        }
+    }
+	</script>
 </form>
 <?php
 	$registro = new Controlador();

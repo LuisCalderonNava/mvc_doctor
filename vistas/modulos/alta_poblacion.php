@@ -9,7 +9,7 @@
 	<!--Codigo postal-->
 	<div class="mb-3">
   	<label for="cp" class="form-label">Codigo Postal</label>
-  	<input type="text" class="form-control" id="cp" placeholder="36639" name="cp" pattern="[0-9]"required>
+  	<input type="text" class="form-control" id="cp" placeholder="36639" name="cp" maxlength="5" required onkeypress="return soloNumeros(event)">
 	</div>
     <!--Provincia -->
     <div class="mb-3">
@@ -29,6 +29,30 @@
 	<div class="d-grid gap-2 col-6 mx-auto">
   		<button type="submit" class="btn btn-secondary">Guardar</button>
 	</div>
+	<script type="text/javascript">
+    function soloNumeros(e)
+    {
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = "123456789";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales)
+       {
+            if(key == especiales[i])
+            {
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        {
+            return false;
+        }
+    }
+    </script>
 </form>
 <?php
 	$registro = new Controlador();
