@@ -72,10 +72,6 @@ class enlacesPaginasControlador
         {
             $modulo = "vistas/modulos/mostrar_provincia.php"
         }
-        if($enlace == "login")
-        {
-            $modulo = "vistas/modulos/login.php";
-        }
         else
         {
             $modulo = "vistas/modulos/principal.php";
