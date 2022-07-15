@@ -77,7 +77,6 @@ class enlacesPaginasControlador
             $modulo = "vistas/modulos/principal.php";
         }
         
-
     }
 }
 
