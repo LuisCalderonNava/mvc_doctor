@@ -291,7 +291,7 @@ class Modelo extends Conexion
     #OBTENCION DE LOS REGISTROS DE LA TABLA PACIENTE    
 	static public function listadoPacienteModelo($tabla1, $tabla2, $tabla3)
 	{
-		$consulta = Conexion::conectar()->prepare("SELECT cod_paciente, CONCAT(nombre, ' ', primer_apellido, ' ', segundo_apellido) AS 'nombres', edad, sexo, telefono FROM $tabla1");
+		$consulta = Conexion::conectar()->prepare("SELECT cod_paciente, direccion, fecha_nacimiento, fk_persona, fk_poblacion FROM $tabla1, $tabla2, $tabla3 WHERE fk_persona = codigo_persona AND fk_poblacion = cod_poblacion ");
 
 		$consulta->execute();
 

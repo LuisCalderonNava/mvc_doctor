@@ -27,6 +27,4 @@ require 'ssp.class.php';
 echo json_encode( 
 SSP::simple($_GET, $dbDetails, $table, $primaryKey, $columns)
 );
-$paciente =  new Controlador();
-$paciente -> MostrarPacienteControlador();
 ?>

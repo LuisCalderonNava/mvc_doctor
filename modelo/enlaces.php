@@ -58,11 +58,11 @@ class Paginas
         }
         elseif($enlace == "mostrar_persona")
         {
-            $modulo = "vistas/modulos/mostrar_persona.php";
+            $modulo = "vistas/modulos/buscar_persona.php";
         }
         elseif($enlace == "mostrar_paciente")
         {
-            $modulo = "vistas/modulos/mostrar_paciente.php";
+            $modulo = "vistas/modulos/buscar_paciente.php";
         }
         elseif($enlace == "mostrar_poblacion")
         {

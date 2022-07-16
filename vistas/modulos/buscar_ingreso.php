@@ -4,7 +4,7 @@
         <div class="row">
         <div class="col-md-12">
         <div class="page-header clearfix">
-            <h2 class="pull-left">Lista de Especialidades</h2>
+            <h2 class="pull-left">Lista de Ingresos</h2>
     </div>
     <table id="especialidad" class="table table-sm table-striped table-bordered" style="width:100%">
         <thead>
