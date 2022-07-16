@@ -300,8 +300,8 @@ class Modelo extends Conexion
 		$consulta->close();
 	}
 
-	#INFORMACION DE LA ALTA LABORATORIO
-	static public function RegistroPoblacionModelo($datosControlador, $tabla);
+	#INFORMACION DE LA ALTA poblacion
+	static public function RegistroPoblacionModelo($datosModelo, $tabla)
 	{
 
 		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (cod_poblacion, cp, fk_provincia) VALUES (:cod_poblacion, :cp, :fk_provincia)");	
@@ -326,7 +326,7 @@ class Modelo extends Conexion
 	}
 
 	#OBTENCION DE REGISTROS DE LA TABLA LABORATORIO 
-	static public function listadoPoblacionModelo($tabla1, $tabla2);
+	static public function listadoPoblacionModelo($tabla1, $tabla2)
 	{
 		$consulta = Conexion::conectar()->prepare("SELECT cod_poblacion, cp, fk_provincia FROM $tabla1, $tabla2 WHERE fk_provincia = cod_provincia");
 
@@ -337,7 +337,7 @@ class Modelo extends Conexion
 		$consulta->close();
 	}
 	#INFORMACION DE LA ALTA PRODUCTO 
-	static public function RegistroPersonaModelo($datosControlador, $tabla);
+	static public function RegistroPersonaModelo($datosModelo, $tabla)
 	{
 		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (codigo_persona, nombre, apellido1, apellido2, telefono) VALUES (:codigo_persona, :nombre, :apellido1, :apellido2, :telefono");	
 
@@ -375,7 +375,7 @@ class Modelo extends Conexion
 	}
 
     #INFORMACION DE LA ALTA TIPO ENSAYO
-	static public function RegistroProvinciaModelo($datosControlador, $tabla)
+	static public function RegistroProvinciaModelo($datosModelo, $tabla)
 	{
 		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (cod_provincia, nombre_provincia) VALUES (:cod_provincia, :nombre_provincia)");	
 

@@ -1,5 +1,5 @@
 <?php
-class enlacesPaginasControlador
+class Paginas
 {
     static public function enlacesPaginasModelo($enlace)
     {
@@ -76,6 +76,7 @@ class enlacesPaginasControlador
         {
             $modulo = "vistas/modulos/principal.php";
         }
+        return $modulo;
         
     }
 }

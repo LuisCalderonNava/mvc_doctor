@@ -22,7 +22,7 @@ class Controlador
 
 		$respuesta = Paginas::enlacesPaginasModelo($enlace);
 
-		include $respuesta;
+	    include $respuesta;
 	}
 
 	#CONSULTA PARA SACAR EL NOMBRE DE LAS especialidades
