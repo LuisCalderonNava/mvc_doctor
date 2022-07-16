@@ -25,6 +25,4 @@ require 'ssp.class.php';
 echo json_encode( 
 SSP::simple($_GET, $dbDetails, $table, $primaryKey, $columns)
 );
-$poblacion =  new Controlador();
-$poblacion -> MostrarPoblacionControlador();
 ?>

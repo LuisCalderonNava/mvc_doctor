@@ -66,7 +66,7 @@ class Paginas
         }
         elseif($enlace == "mostrar_poblacion")
         {
-            $modulo = "vistas/modulos/mostrar_poblacion.php";
+            $modulo = "vistas/modulos/buscar_poblacion.php";
         }
         elseif($enlace == "mostrar_provincia")
         {
