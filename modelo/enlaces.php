@@ -54,7 +54,7 @@ class Paginas
         }
         elseif($enlace == "mostrar_medico")
         {
-            $modulo = "vistas/modulos/mostrar_medico.php";
+            $modulo = "vistas/modulos/buscar_medico.php";
         }
         elseif($enlace == "mostrar_persona")
         {

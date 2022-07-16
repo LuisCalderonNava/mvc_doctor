@@ -248,9 +248,8 @@ class Modelo extends Conexion
 	#FUNCION PARA OBTENER LOS REGISTROS DE LA TABLA MEDICO
 	static public function listadoMedicoModelo($tabla1, $tabla2, $tabla3)
 	{
-		$consulta = Conexion::conectar()->prepare("SELECT cod_medico,  
-		CONCAT(nombre, ' ', apellido1, ' ', apellido2) AS 'nombres', fk_especialidad, fk_persona 
-		FROM $tabla1, $tabla2, $tabla3 WHERE fk_especialidad = cod_especialidad AND fk_persona = cod_persona");
+		$consulta = Conexion::conectar()->prepare("SELECT cod_medico, fk_especialidad, fk_persona
+		FROM $tabla1, $tabla2, $tabla3 WHERE fk_especialidad = cod_especialidad AND fk_persona = codigo_persona");
 
 		$consulta->execute();
 
