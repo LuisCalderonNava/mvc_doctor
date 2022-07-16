@@ -50,7 +50,7 @@ class Paginas
         }
         elseif($enlace == "mostrar_ingreso")
         {
-            $modulo = "vistas/modulos/mostrar_ingreso.php";
+            $modulo = "vistas/modulos/buscar_ingreso.php";
         }
         elseif($enlace == "mostrar_medico")
         {

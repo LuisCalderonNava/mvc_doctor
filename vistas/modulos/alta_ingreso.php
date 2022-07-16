@@ -8,7 +8,7 @@
 <form method="POST" enctype="multipart/form-data" autocomplete="off">
     <!-- Fecha de Ingreso -->
     <div class="mb-3">
-  	<label for="fecha_ingreso" class="form-label">Fecha de nacimiento: </label>
+  	<label for="fecha_ingreso" class="form-label">Fecha de Ingreso: </label>
   	<input type="date" class="form-control" id="fecha_ingreso"  name="fecha_ingreso" required>
 	</div>
     <!-- Numero de cama -->
