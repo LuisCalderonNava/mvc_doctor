@@ -13,8 +13,8 @@
 	</div>
     <!--Provincia -->
     <div class="mb-3">
-	<label for="provincia" class="form-label">Provincia</label>
-	<select class="form-select" aria-label="Default select example" name="provincia" id="provincia" required>
+	<label for="nombre_provincia" class="form-label">Provincia</label>
+	<select class="form-select" aria-label="Default select example" name="nombre_provincia" id="nombre_provincia" required>
 	  <option value="">Seleccione...</option>
 	  <?php 
 	  	$consulta = Controlador::consultaProvinciaControlador();

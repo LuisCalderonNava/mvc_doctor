@@ -8,7 +8,7 @@
 <form method="POST" enctype="multipart/form-data" autocomplete="off">
 	<!--Nombre de la categoria-->
 	<div class="mb-3">
-  	<label for="provincia" class="form-label">Nombre de la provincia</label>
+  	<label for="nombre_provincia" class="form-label">Nombre de la provincia</label>
   	<input type="text" class="form-control" id="nombre_provincia" placeholder="malaga" name="nombre_provincia" required onkeypress="return soloLetras(event)" maxlength="30">
 	</div>
 	<!--Boton-->

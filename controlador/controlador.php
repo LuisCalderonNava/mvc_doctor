@@ -392,11 +392,11 @@ class Controlador
 	#INFROMACION poblacion
 	static public function registroPoblacionControlador()
 	{
-		if(isset($_POST['cod_poblacion']))
+		if(isset($_POST['cp']))
 		{
 			$tabla = "poblacion";
 
-			$datosControlador = array("cod_poblacion"=>$_POST['cod_poblacion'], "cp"=>$_POST['cp'], "fk_provincia"=>$_POST['fk_provincia']);
+			$datosControlador = array("cp"=>$_POST['cp'], "fk_provincia"=>$_POST['nombre_provincia']);
 
 			$respuesta = Modelo::RegistroPoblacionModelo($datosControlador, $tabla);
 
@@ -454,7 +454,7 @@ class Controlador
 		{
 			$tabla = "provincia";
 
-			$datosControlador = array("cod_provincia"=>$_POST['cod_provincia'], "nombre_provincia"=>$_POST['nombre_provincia']);
+			$datosControlador = array("nombre_provincia"=>$_POST['nombre_provincia']);
 
 			$respuesta = Modelo::RegistroProvinciaModelo($datosControlador, $tabla);
 

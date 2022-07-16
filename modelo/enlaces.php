@@ -70,7 +70,7 @@ class Paginas
         }
         elseif($enlace == "mostrar_provincia")
         {
-            $modulo = "vistas/modulos/mostrar_provincia.php";
+            $modulo = "vistas/modulos/buscar_provincia.php";
         }
         else
         {
