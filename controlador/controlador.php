@@ -335,7 +335,7 @@ class Controlador
 		{
 			$tabla = "persona";
 
-			$datosControlador = array("codigo_persdona"=>$_POST['codigo_persdona'],"nombre"=>$_POST['nombre'],"apellido1"=>$_POST['apellido1'],"apellido2"=>$_POST['apellido2'], "telefono"=>$_POST['telefono']);
+			$datosControlador = array("nombre"=>$_POST['nombre'],"apellido1"=>$_POST['apellido1'],"apellido2"=>$_POST['apellido2'],"telefono"=>$_POST['telefono']);
 
 			$respuesta = Modelo::RegistroPersonaModelo($datosControlador, $tabla);
 

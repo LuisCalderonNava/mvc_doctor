@@ -339,9 +339,9 @@ class Modelo extends Conexion
 	#INFORMACION DE LA ALTA PRODUCTO 
 	static public function RegistroPersonaModelo($datosModelo, $tabla)
 	{
-		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (codigo_persona, nombre, apellido1, apellido2, telefono) VALUES (:codigo_persona, :nombre, :apellido1, :apellido2, :telefono");	
+		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (codigo_persona, nombre, apellido1, apellido2, telefono) VALUES (:pk_persona, :nombre, :apellido1, :apellido2, :telefono");	
 
-		$consulta->bindParam(":codigo_persona", $datosModelo["codigo_persona"], PDO::PARAM_STR);
+		$consulta->bindParam(":pk_persona", $datosModelo["codigo_persona"], PDO::PARAM_STR);
 		$consulta->bindParam(":nombre", $datosModelo["nombre"], PDO::PARAM_STR);
 		$consulta->bindParam(":apellido1", $datosModelo["apellido1"], PDO::PARAM_STR);
 		$consulta->bindParam(":apellido2", $datosModelo["apellido2"], PDO::PARAM_STR);

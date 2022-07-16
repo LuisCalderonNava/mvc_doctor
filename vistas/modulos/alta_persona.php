@@ -6,10 +6,10 @@
 </div>
 <br><br>
 <form method="POST" enctype="multipart/form-data" autocomplete="off">
-	<!--Nombre de la categoria-->
+	<!--Nombre de la persona-->
 	<div class="mb-3">
-  	<label for="nom_persona" class="form-label">Nombre: </label>
-  	<input type="text" class="form-control" id="nom_persona" placeholder="Luis Paulo" name="nom_persona" required onkeypress="return soloLetras(event)" maxlength="20">
+  	<label for="nombre" class="form-label">Nombre: </label>
+  	<input type="text" class="form-control" id="nombre" placeholder="Luis Paulo" name="nombre" required onkeypress="return soloLetras(event)" maxlength="20">
 	</div>
     <!-- apellido numero 1 -->
     <div class="mb-3">
@@ -22,8 +22,8 @@
   	<input type="text" class="form-control" id="apellido2" placeholder="Calderon" name="apellido2" required onkeypress="return soloLetras(event)" maxlength="20">
     <!-- telefono -->
     <div class="mb-3">
-  	<label for="telefono" class="form-label">Apellido 1: </label>
-  	<input type="text" class="form-control" id="telefono" placeholder="323-129-0260" name="telefono" required onkeypress="return soloLetras(event)" maxlength="20">
+  	<label for="telefono" class="form-label">Telefono: </label>
+  	<input type="text" class="form-control" id="telefono" placeholder="323-129-0260" name="telefono" required onkeypress="return soloNumeros(event)" maxlength="20">
 
 	<!--Boton-->
 	<div class="d-grid gap-2 col-6 mx-auto">
@@ -53,6 +53,30 @@
         }
     }
 	</script>
+  	<script type="text/javascript">
+    function soloNumeros(e)
+    {
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = "1234567890";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales)
+       {
+            if(key == especiales[i])
+            {
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        {
+            return false;
+        }
+    }
+    </script>
 </form>
 <?php
 	$registro = new Controlador();
