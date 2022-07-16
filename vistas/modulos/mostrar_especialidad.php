@@ -25,7 +25,3 @@ echo json_encode(
 SSP::simple($_GET, $dbDetails, $table, $primaryKey, $columns)
 );
 ?>
-<?php
-$especialidad = new Controlador();
-$especialidad -> MostrarEspecialidadControlador();
-?>

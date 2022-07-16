@@ -42,7 +42,7 @@ class Paginas
         // AHORA SIGUEN LOS DE MOSTRAR
         elseif($enlace == "mostrar_espe")
         {
-            $modulo = "vistas/modulos/mostrar_especialidad.php";
+            $modulo = "vistas/modulos/buscar_especialidad.php";
         }
         elseif($enlace == "mostrar_habitacion")
         {

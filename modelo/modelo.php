@@ -105,9 +105,10 @@ class Modelo extends Conexion
 	static public function RegistroEspecialidadModelo($datosModelo, $tabla)
 	{
 		
-		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (nombre_especialidad) VALUES (:nombre_especialidad)");	
+		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (cod_especialidad, nombre_especialidad) VALUES (:cod_especialidad, :nombre_especialidad)");	
 
 		# EN ESTA PARTE SE OBTIENEN LOS DATOS 
+        $consulta->bindParam(":cod_especialidad", $datosModelo["cod_especialidad"], PDO::PARAM_STR);
 		$consulta->bindParam(":nombre_especialidad", $datosModelo["nombre_especialidad"], PDO::PARAM_STR);
 
 		if($consulta->execute())
