@@ -46,7 +46,7 @@ class Paginas
         }
         elseif($enlace == "mostrar_habitacion")
         {
-            $modulo = "vistas/modulos/mostrar_habitacion.php";
+            $modulo = "vistas/modulos/buscar_habitacion.php";
         }
         elseif($enlace == "mostrar_ingreso")
         {
