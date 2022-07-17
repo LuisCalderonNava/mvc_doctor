@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP Medicos</title>
@@ -17,6 +18,25 @@
     <!-- DataTables JBootstrap -->
     <script type="text/javascript" src="//cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- convertir a pdf -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <!-- jQuery, Popper.js, Bootstrap JS -->
+        <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+      
+    <!-- datatables JS -->
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>    
+     
+    <!-- para usar botones en datatables JS -->  
+    <script src="modulos/dataTable/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="modulos/dataTable/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="modulos/dataTable/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="modulos/dataTable/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="modulos/dataTable/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+     
+    <!-- código JS propìo-->    
+    <script type="text/javascript" src="js/main.js"></script>  
     
 </head>
 <body>

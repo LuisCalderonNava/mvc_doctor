@@ -53,9 +53,9 @@ class Controlador
 	}
 
 	#CONSULTA para los medicos
-	static public function consultaMedicoControlador()
+	static public function consultaPersonaMedicoControlador()
 	{
-		$tabla = 'medico';
+		$tabla = 'persona';
 		$respuesta = Modelo::consultaMedicoModelo($tabla);
 
 		return $respuesta;
@@ -65,13 +65,14 @@ class Controlador
 	static public function consultaPacienteControlador()
 	{
 		$tabla = 'paciente';
+        $tabla2 = 'persona';
 		$respuesta = Modelo::consultaPacienteModelo($tabla);
 
 		return $respuesta;
 	}
 
 	#CONSULTA para ver las personas
-	static public function consultaPersonaControlador()
+	static public function consultaPersonaPacienteControlador()
 	{
 		$tabla = 'persona';
 		$respuesta = Modelo::consultaPersonaModelo($tabla);
@@ -94,6 +95,14 @@ class Controlador
   
 		  return $respuesta;
 	  }
+      #CONSULTA para los medicos
+	static public function consultaMedicoControlador()
+	{
+		$tabla = 'medico';
+		$respuesta = Modelo::consultaIngresoMedicoModelo($tabla);
+
+		return $respuesta;
+	}
 
 	#REGISTRO QUE SACA LA INFORMACION DE LO QUE CONTIENE LA TABLA especialidad
 	static public function registroEspecialidadControlador()
@@ -210,11 +219,11 @@ class Controlador
 	#REGISTRO INFORMACION medico
 	static public function registroMedicoControlador()
 	{
-		if(isset($_POST['cod_medico']))
+		if(isset($_POST['especialidad']))
 		{
 			$tabla = "medico";
 
-			$datosControlador = array("cod_medico"=>$_POST['medico'], "cod_especialidad"=>$_POST['especialidad'], "codigo_persona"=>$_POST['persona']);
+			$datosControlador = array( "fk_especialidad"=>$_POST['especialidad'], "fk_persona"=>$_POST['medico']);
 
 			$respuesta = Modelo::RegistroMedicoModelo($datosControlador, $tabla);
 
@@ -259,8 +268,8 @@ class Controlador
 			?>
 				<tr>
 					<td><?php echo $valores['cod_medico']; ?></td>
-					<td><?php echo $valores['cod_especialidad']; ?></td>
-					<td><?php echo $valores['codigo_persona']; ?></td>
+					<td><?php echo $valores['fk_especialidad']; ?></td>
+					<td><?php echo $valores['fk_persona']; ?></td>
 				</tr>
 			<?php
 		}
@@ -270,11 +279,11 @@ class Controlador
 	#REGISTRO INFROMACION paciente
 	static public function registroPacienteControlador()
 	{
-		if(isset($_POST['medidas']))
+		if(isset($_POST['direccion']))
 		{
 			$tabla = "paciente";
 
-			$datosControlador = array("cod_paciente"=>$_POST['cod_paciente'],"direccion"=>$_POST['direccion'], "fecha_nacimiento"=>$_POST['fecha_nacimiento'], "fk_persona"=>$_POST['fk_persona'], "fk_poblacion"=>$_POST['fk_poblacion']);
+			$datosControlador = array("direccion"=>$_POST['direccion'], "fecha_nacimiento"=>$_POST['fecha_nacimiento'], "fk_persona"=>$_POST['nombre_persona'], "fk_poblacion"=>$_POST['poblacion']);
 
 			$respuesta = Modelo::RegistroPacienteModelo($datosControlador, $tabla);
 
@@ -331,11 +340,11 @@ class Controlador
 	#INFORMACION DEL JEFE persona
 	static public function registroPersonaControlador()
 	{
-		if(isset($_POST['nombre']))
+		if(isset($_POST['nombre_persona']))
 		{
 			$tabla = "persona";
 
-			$datosControlador = array("nombre"=>$_POST['nombre'],"apellido1"=>$_POST['apellido1'],"apellido2"=>$_POST['apellido2'],"telefono"=>$_POST['telefono']);
+			$datosControlador = array("nombre"=>$_POST['nombre_persona'],"apellido1"=>$_POST['apellido1'],"apellido2"=>$_POST['apellido2'],"telefono"=>$_POST['telefono']);
 
 			$respuesta = Modelo::RegistroPersonaModelo($datosControlador, $tabla);
 
@@ -510,9 +519,9 @@ class Controlador
 		{
 			$tabla = "ingreso";
 
-			$datosControlador = array("cod_ingreso"=>$_POST['cod_ingreso'],"fecha_ingreso"=>$_POST['fecha_ingreso'],"num_cama"=>$_POST['num_cama'],"fk_paciente"=>$_POST['fk_paciente'],"fk_medico"=>$_POST['fk_medico'],"fk_habitacion"=>$_POST['fk_habitacion'],);
+			$datosControlador = array("fecha_ingreso"=>$_POST['fecha_ingreso'],"num_cama"=>$_POST['numero_cama'],"fk_paciente"=>$_POST['nom_paciente'],"fk_medico"=>$_POST['nom_medico'],"fk_habitacion"=>$_POST['habitacion'],);
 
-			$respuesta = Modelo::RegistroTPensayoModelo($datosControlador, $tabla);
+			$respuesta = Modelo::RegistroIngresoModelo($datosControlador, $tabla);
 
 			if($respuesta == 'ok')
 			{

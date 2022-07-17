@@ -8,8 +8,8 @@
 <form method="POST" enctype="multipart/form-data" autocomplete="off">
 	<!--Nombre de la persona-->
 	<div class="mb-3">
-  	<label for="nombre" class="form-label">Nombre: </label>
-  	<input type="text" class="form-control" id="nombre" placeholder="Luis Paulo" name="nombre" required onkeypress="return soloLetras(event)" maxlength="20">
+  	<label for="nombre_persona" class="form-label">Nombre: </label>
+  	<input type="text" class="form-control" id="nombre_persona" placeholder="Luis Paulo" name="nombre_persona" required onkeypress="return soloLetras(event)" maxlength="20">
 	</div>
     <!-- apellido numero 1 -->
     <div class="mb-3">

@@ -9,17 +9,17 @@
 	<!--Direccion-->
 	<div class="mb-3">
   	<label for="direccion" class="form-label">Direccion: </label>
-  	<input type="text" class="form-control" id="direccion" placeholder="Nayar #23..." name="direccion" required onkeypress="return soloLetras(event)" maxlength="50">
+  	<input type="text" class="form-control" id="direccion" placeholder="Nayar #23..." name="direccion" required  maxlength="50">
 	</div>
     <!-- Fecha de nacimiento -->
     <div class="mb-3">
-  	<label for="fecha_nac" class="form-label">Fecha de nacimiento: </label>
-  	<input type="date" class="form-control" id="fecha_nac"  name="fecha_nac" required>
+  	<label for="fecha_nacimiento" class="form-label">Fecha de nacimiento: </label>
+  	<input type="date" class="form-control" id="fecha_nacimiento"  name="fecha_nacimiento" required>
 	</div>
     <!-- Persona-->
     <div class="mb-3">
-	<label for="nom_persona" class="form-label">Nombre persona</label>
-	<select class="form-select" aria-label="Default select example" name="nom_persona" id="nom_persona" required>
+	<label for="nombre_persona" class="form-label">Nombre persona</label>
+	<select class="form-select" aria-label="Default select example" name="nombre_persona" id="nom_persona" required>
 	  <option value="">Seleccione...</option>
 	  <?php 
 	  	$consulta = Controlador::consultaPersonaPacienteControlador();

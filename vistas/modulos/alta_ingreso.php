@@ -26,7 +26,7 @@
 	  	$consulta = Controlador::consultaPacienteControlador();
 	  	foreach($consulta as $datos => $valores)
 	  	{
-	  		echo '<option value="'.$valores["codigo_paciente"].'">'.$valores["nombre"].'</option>';
+	  		echo '<option value="'.$valores["cod_paciente"].'">'.$valores["fk_persona"].'</option>';
 	  	}
 	  ?>
 	</select>
@@ -40,14 +40,14 @@
 	  	$consulta = Controlador::consultaMedicoControlador();
 	  	foreach($consulta as $datos => $valores)
 	  	{
-	  		echo '<option value="'.$valores["cod_medico"].'">'.$valores["nombre"].'</option>';
+	  		echo '<option value="'.$valores["cod_medico"].'">'.$valores["cod_medico"].'</option>';
 	  	}
 	  ?>
 	</select>
 	</div>
         <!-- Habitacion -->
     <div class="mb-3">
-	<label for="habitacion: " class="form-label">Habitacion: </label>
+	<label for="habitacion" class="form-label">Habitacion: </label>
 	<select class="form-select" aria-label="Default select example" name="habitacion" id="habitacion" required>
 	  <option value="">Seleccione...</option>
 	  <?php 

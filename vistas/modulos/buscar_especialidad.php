@@ -1,3 +1,4 @@
+
     </div><br>
     <div class="bs-example">
         <div class="container">
@@ -6,7 +7,8 @@
         <div class="page-header clearfix">
             <h2 class="pull-left">Lista de Especialidades</h2>
     </div>
-    <table id="especialidad" class="table table-sm table-striped table-bordered" style="width:100%">
+
+    <table id="text" class="table table-sm table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>codigo de la especialidad</th>

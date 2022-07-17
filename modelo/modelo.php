@@ -19,7 +19,7 @@ class Modelo extends Conexion
 	#LISTADO DE REGISTROS DE LA TABLA HABITACION
 	static public function consultaHabitacionModelo($tabla)
 	{
-		$consulta = Conexion::conectar()->prepare("SELECT cod_habitacion, num_camas FROM $tabla ORDER BY num_camas");
+		$consulta = Conexion::conectar()->prepare("SELECT cod_habitacion, num_camas FROM $tabla ORDER BY cod_habitacion");
 
 		$consulta -> execute();
 
@@ -43,7 +43,7 @@ class Modelo extends Conexion
 	#LISTADO DE LOS REGISTROS DE LA TABLA MEDICO
 	static public function consultaMedicoModelo($tabla)
 	{
-		$consulta = Conexion::conectar()->prepare("SELECT cod_medico, fk_persona FROM $tabla ORDER BY fk_persona");
+		$consulta = Conexion::conectar()->prepare("SELECT codigo_persona, nombre FROM $tabla ORDER BY nombre");
 
 		$consulta -> execute();
 
@@ -67,7 +67,7 @@ class Modelo extends Conexion
 	#LISTADO DE LOS REGISTROS DE LA TABLA PERSONA
 	static public function consultaPersonaModelo($tabla)
 	{
-		$consulta = Conexion::conectar()->prepare("SELECT codigo_persona, CONCAT(nombre, ' ', apellido1, ' ',apellido2) AS nombres FROM $tabla ORDER BY nombres");
+		$consulta = Conexion::conectar()->prepare("SELECT codigo_persona, nombre FROM $tabla ORDER BY nombre");
 
 
 		$consulta -> execute();
@@ -79,7 +79,7 @@ class Modelo extends Conexion
     #LISTADO DE LOS REGISTROS DE LA TABLA POBLACION
 	static public function consultaPoblacionModelo($tabla)
 	{
-		$consulta = Conexion::conectar()->prepare("SELECT cod_poblacion, fk_provincia FROM $tabla ORDER BY fk_provincia");
+		$consulta = Conexion::conectar()->prepare("SELECT cod_poblacion, cp FROM $tabla ORDER BY cod_poblacion");
 
 		$consulta -> execute();
 
@@ -91,6 +91,17 @@ class Modelo extends Conexion
 	static public function consultaProvinciaModelo($tabla)
 	{
 		$consulta = Conexion::conectar()->prepare("SELECT cod_provincia, nombre_provincia FROM $tabla ORDER BY nombre_provincia");
+
+		$consulta -> execute();
+
+		return $consulta->fetchAll();
+
+		$consulta->close();
+	}
+     #LISTADO DE LOS REGISTROS DE LA TABLA PROVINCIA
+	static public function consultaIngresoMedicoModelo($tabla)
+	{
+		$consulta = Conexion::conectar()->prepare("SELECT cod_medico FROM $tabla");
 
 		$consulta -> execute();
 
@@ -229,7 +240,6 @@ class Modelo extends Conexion
 		$consulta->bindParam(":fk_especialidad", $datosModelo["fk_especialidad"], PDO::PARAM_STR);
         $consulta->bindParam(":fk_persona", $datosModelo["fk_persona"], PDO::PARAM_STR);
 		
-		
 		if($consulta->execute())
 		{
 			$resultado = "ok";
@@ -262,8 +272,7 @@ class Modelo extends Conexion
 	static public function RegistroPacienteModelo($datosModelo, $tabla)
 	{
 		
-		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (cod_paciente, direccion, fecha_nacimiento, fk_persona, fk_poblacion) 
-		VALUES (:cod_paciente, :direccion, :fecha_nacimiento, :fk_persona, :fk_poblacion)");	
+		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (cod_paciente, direccion, fecha_nacimiento, fk_persona, fk_poblacion) VALUES (:cod_paciente, :direccion, :fecha_nacimiento, :fk_persona, :fk_poblacion)");	
 
 		$consulta->bindParam(":cod_paciente", $datosModelo["cod_paciente"], PDO::PARAM_STR);
 		$consulta->bindParam(":direccion", $datosModelo["direccion"], PDO::PARAM_STR);
@@ -339,14 +348,13 @@ class Modelo extends Conexion
 	#INFORMACION DE LA ALTA PRODUCTO 
 	static public function RegistroPersonaModelo($datosModelo, $tabla)
 	{
-		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (codigo_persona, nombre, apellido1, apellido2, telefono) VALUES (:pk_persona, :nombre, :apellido1, :apellido2, :telefono");	
+		$consulta = Conexion::conectar()->prepare("INSERT INTO $tabla (codigo_persona, nombre, apellido1, apellido2, telefono) VALUES (:codigo_persona, :nombre, :apellido1, :apellido2, :telefono)");	
 
-		$consulta->bindParam(":pk_persona", $datosModelo["codigo_persona"], PDO::PARAM_STR);
+		$consulta->bindParam(":codigo_persona", $datosModelo["codigo_persona"], PDO::PARAM_STR);
 		$consulta->bindParam(":nombre", $datosModelo["nombre"], PDO::PARAM_STR);
 		$consulta->bindParam(":apellido1", $datosModelo["apellido1"], PDO::PARAM_STR);
 		$consulta->bindParam(":apellido2", $datosModelo["apellido2"], PDO::PARAM_STR);
 		$consulta->bindParam(":telefono", $datosModelo["telefono"], PDO::PARAM_STR);
-
 		if($consulta->execute())
 		{
 			$resultado = "ok";
